@@ -1,8 +1,5 @@
-module.exports = {
+{
   "parser": "babel-eslint",
-  "rules": {
-    "strict": 0
-  },
   "env": {
     "browser": true,
     "es6": true
@@ -36,10 +33,10 @@ module.exports = {
       "always"
     ],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    /* Advanced Rules*/
     "no-unused-expressions": "warn",
     "no-useless-concat": "warn",
     "block-scoped-var": "error",
-    "consistent-return": "error"
+    "consistent-return": "error",
+    "strict": 0
   }
-};
+}
