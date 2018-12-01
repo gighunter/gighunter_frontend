@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { requestLoginInformation } from '../actions/index';
+import { sendSignUpInformation } from '../actions/index';
 
 class SignUpContainer extends React.Component {
 
@@ -11,11 +11,11 @@ class SignUpContainer extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <div>
        Sign_Up Container
       </div>
-    )
+    );
   }
 }
 
