@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { requestLoginInformation } from '../actions/index';
 
-class LoginContainer extends React.Component {
+class SignUpContainer extends React.Component {
 
   constructor(props) {
     super(props);
@@ -13,7 +13,7 @@ class LoginContainer extends React.Component {
   render() {
     return(
       <div>
-       LoginContainer
+       Sign_Up Container
       </div>
     )
   }
@@ -21,4 +21,4 @@ class LoginContainer extends React.Component {
 
 const mapDispatchToProps = dispatch => bindActionCreators({ requestLoginInformation }, dispatch);
 
-export default connect(null, mapDispatchToProps)(LoginContainer);
+export default connect(null, mapDispatchToProps)(SignUpContainer);
