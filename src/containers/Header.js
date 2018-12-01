@@ -14,13 +14,13 @@ const Header = () => {
         </div>
         <div className="login_signup">
           <div className="header_container_login">
-            <Link to="/login">Login</Link>
+            <Link to="/Login">Login</Link>
           </div>
         </div>
         <div className="header_container_signup">
-          <Link to="/login">Sign Up</Link>
-         </div>
+          <Link to="/Sign_Up">Sign Up</Link>
         </div>
+      </div>
     )
   };
 
