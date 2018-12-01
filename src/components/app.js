@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { HashRouter as Router, Route } from 'react-router-dom'
 import Header from '../containers/Header';
-import { Link } from 'react-router-dom';
+import LoginContainer from '../containers/LoginContainer';
 
 
 export default class App extends React.Component {
@@ -11,9 +12,12 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
-       App
-      </div>
+      <Router>
+        <div>
+          <Header />
+          <Route exact path="/" component={LoginContainer} />
+        </div>
+      </Router>
     );
   }
 }

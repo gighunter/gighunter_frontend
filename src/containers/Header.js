@@ -1,19 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
-
-class Header extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = { h: '' }
-  }
-
-  render() {
-
+const Header = () => {
     return(
       <div className="header_container">
         <div className="header_container_logo">
@@ -24,16 +12,16 @@ class Header extends React.Component {
           <div><Link to="/route2">Link_Two</Link></div>
           <div><Link to="/route3">Link_Three</Link></div>
         </div>
-        <button className="login" type="button"> Log In </button>
-        <button className="signUp" type="button"> Sign Up </button>
-      </div>
+        <div className="login_signup">
+          <div className="header_container_login">
+            <Link to="/login">Login</Link>
+          </div>
+        </div>
+        <div className="header_container_signup">
+          <Link to="/login">Sign Up</Link>
+         </div>
+        </div>
     )
-  }
-}
-
-
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators();
-// };
+  };
 
 export default Header;
