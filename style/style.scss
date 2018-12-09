@@ -1,6 +1,31 @@
 @import "colors";
 
-.header_container a {
-	background-color: $color--gighunter--primary--purple;
-	color: $color--gighunter--text--light;
+.header {
+  color: white;
+  background-color: $color--gighunter--background--dark;
+  overflow: hidden;
+  text-align: center;
+  font-size: 22px;
+  height: 75px;
+
+  .header__left {
+    display: inline-block;
+    float: left;
+
+  }
+  .header__right {
+    float: right;
+
+    div {
+      display: inline;
+    }
+  }
+
+  a {
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 4px;
+  }
 }

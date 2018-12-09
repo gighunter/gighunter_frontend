@@ -15,15 +15,13 @@ export default class App extends React.Component {
   render() {
     return (
       <Router>
-        <div>
-          <Switch>
-            <Header />
-            <Route exact path="/" component={Home} />
-            <Route exact path="/Login" component={LoginContainer} />
-            <Route exact path="/Sign_Up" component={SignUpContainer} />
-            <Route component={NotFound} />
-          </Switch>
-        </div>
+        <Switch>
+          <Header/>
+          <Route exact component={Home}            path="/home" />
+          <Route exact component={LoginContainer}  path="/Login" />
+          <Route exact component={SignUpContainer} path="/Sign_Up" />
+          <Route       component={NotFound} />
+        </Switch>
       </Router>
     );
   }
