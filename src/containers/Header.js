@@ -5,7 +5,7 @@ const Header = () => (
   <div className="header">
     <div className="header__left">
       <div className="logo--white">
-        <Link to="/">GigHunter LOGO</Link>
+        <img src="/logo-white.png" alt="Gighunter" />
       </div>
     </div>
     <div className="header__right">

@@ -11,11 +11,17 @@ class LoginContainer extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <div>
-       LoginContainer
+        <br />
+        <br />
+        <br />
+        <br />
+        <p>
+          Login Container
+        </p>
       </div>
-    )
+    );
   }
 }
 

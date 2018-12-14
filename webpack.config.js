@@ -1,4 +1,3 @@
-
 module.exports = {
   entry: './src/index.js',
   module: {
@@ -13,6 +12,10 @@ module.exports = {
         use: [{ loader: "style-loader" },
               { loader: "css-loader" },
               { loader: "sass-loader" }]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file']
       }
     ]
   },
