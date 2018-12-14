@@ -1,5 +1,5 @@
 @import "colors";
-// @import "https://fonts.googleapis.com/css?family=Ubuntu";
+@import "fonts";
 
 .header {
   color: white;
@@ -26,7 +26,7 @@
 
   a {
     color: white;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: $gighunter--header--font;
     text-align: center;
     padding: 12px;
     text-decoration: none;
