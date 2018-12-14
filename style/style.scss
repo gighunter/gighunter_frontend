@@ -9,15 +9,17 @@
   overflow: hidden;
   text-align: center;
   font-size: 22px;
-  height: 75px;
+  height: 25%;
 
   .header__left {
+    margin: 3% auto auto 1%;
     display: inline-block;
     float: left;
 
   }
   .header__right {
     float: right;
+    margin: 3% 2% auto auto;
 
     div {
       display: inline;
