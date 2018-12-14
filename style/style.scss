@@ -1,6 +1,35 @@
 @import "colors";
+@import "fonts";
 
-.header_container a {
-	background-color: $color--gighunter--primary--purple;
-	color: $color--gighunter--text--light;
+.header {
+  color: white;
+  background-color: $color--gighunter--background--dark;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  font-size: 22px;
+  height: 75px;
+
+  .header__left {
+    display: inline-block;
+    float: left;
+
+  }
+  .header__right {
+    float: right;
+
+    div {
+      display: inline;
+    }
+  }
+
+  a {
+    color: white;
+    font-family: $gighunter--header--font;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 4px;
+  }
 }
