@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from '../containers/Header';
 import LoginContainer from '../containers/LoginContainer';
 import SignUpContainer from '../containers/SignUpContainer';
@@ -15,13 +15,15 @@ export default class App extends React.Component {
   render() {
     return (
       <Router>
-        <Switch>
-          <Header/>
-          <Route exact component={Home}            path="/home" />
-          <Route exact component={LoginContainer}  path="/Login" />
-          <Route exact component={SignUpContainer} path="/Sign_Up" />
-          <Route       component={NotFound} />
-        </Switch>
+        <div>
+          <Header />
+          <Switch>
+            <Route exact component={Home}            path="/" />
+            <Route exact component={LoginContainer}  path="/login" />
+            <Route exact component={SignUpContainer} path="/sign-up" />
+            <Route       component={NotFound} />
+            </Switch>
+        </div>
       </Router>
     );
   }
