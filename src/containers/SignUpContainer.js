@@ -13,10 +13,6 @@ class SignUpContainer extends React.Component {
   render() {
     return (
       <div>
-        <br />
-        <br />
-        <br />
-        <br />
         <p>
           Sign Up Container
         </p>
