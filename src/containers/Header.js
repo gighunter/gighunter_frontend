@@ -19,10 +19,10 @@ const Header = () => (
         <Link to="/route3">Good Guys</Link>
       </div>
       <div>
-        <Link to="/Login">Login</Link>
+        <Link to="/login">Login</Link>
       </div>
       <div>
-        <Link to="/Sign_Up">Sign Up</Link>
+        <Link to="/sign-up">Sign Up</Link>
       </div>
     </div>
   </div>

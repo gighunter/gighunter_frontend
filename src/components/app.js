@@ -17,12 +17,14 @@ export default class App extends React.Component {
       <Router>
         <div>
           <Header />
-          <Switch>
-            <Route exact component={Home}            path="/" />
-            <Route exact component={LoginContainer}  path="/login" />
-            <Route exact component={SignUpContainer} path="/sign-up" />
-            <Route       component={NotFound} />
-            </Switch>
+          <div className="page-body">
+            <Switch>
+              <Route exact component={Home}            path="/" />
+              <Route exact component={LoginContainer}  path="/login" />
+              <Route exact component={SignUpContainer} path="/sign-up" />
+              <Route       component={NotFound} />
+              </Switch>
+          </div>
         </div>
       </Router>
     );
