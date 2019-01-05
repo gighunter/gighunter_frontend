@@ -38,7 +38,7 @@ export default class App extends React.Component {
       }
     }).then(resp => resp.json())
     .then(json => this.setState({
-      user: {name: json.name, email: json.email, id: json.id}
+      user: json
     }, () => console.log(this.state)))
   }
 
