@@ -21,6 +21,6 @@ class SignUpContainer extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({ requestLoginInformation }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ sendSignUpInformation }, dispatch);
 
 export default connect(null, mapDispatchToProps)(SignUpContainer);

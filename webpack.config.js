@@ -1,5 +1,8 @@
+var FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+
 module.exports = {
   entry: './src/index.js',
+  mode: 'development',
   module: {
     rules: [
       {
@@ -9,9 +12,9 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [{ loader: "style-loader" },
-              { loader: "css-loader" },
-              { loader: "sass-loader" }]
+        use: [{ loader: 'style-loader' },
+              { loader: 'css-loader' },
+              { loader: 'sass-loader' }]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -19,6 +22,14 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new FriendlyErrorsWebpackPlugin({
+      compilationSuccessInfo: {
+       messages: ['The machine spirit is prepared on http://localhost:8080'],
+       notes: ['Compiled successfully my lord.']
+     }
+    })
+  ],
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
@@ -33,6 +44,22 @@ module.exports = {
       watchOptions: {
         aggregateTimeout: 300,
         poll: 1000
-      }
+      },
+       stats: {
+         colors: true,
+         hash: false,
+         version: false,
+         timings: false,
+         assets: false,
+         chunks: false,
+         modules: false,
+         reasons: false,
+         children: false,
+         source: false,
+         errors: true,
+         errorDetails: true,
+         warnings: true,
+         publicPath: false
+  }
     }
 };

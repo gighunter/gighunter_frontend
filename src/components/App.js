@@ -12,35 +12,35 @@ export default class App extends React.Component {
     this.state = { hello: '', user: {} };
   }
 
-// AS SOON AS USER LOGS IN WITH THEIR EMAIL AND PASSWORD, AN AUTH TOKEN IS RETURNED
-// WE WILL SET THIS IN THE LOCAL STORAGE FOR ALL FUTURE REQUESTS
-  componentDidMount = () => {
-    fetch('http://localhost:3000/authenticate?email=rick@rick.com&password=rick', {
-      method: "POST",
-      headers:{
-      'Content-Type': 'application/json',
-  }
-}).then(resp => resp.json()).then(json => this.setAuthToken(json)).then(() => this.getUserData())
-  }
-
-// SETTING THE AUTH TOKEN IN LOCAL STORAGE
-  setAuthToken = (json) => {
-    localStorage.setItem('authToken', json.auth_token)
-  }
-
-// EXAMPLE OF HOW TO USE THE AUTH TOKEN TO GET DATA.
-  getUserData = () => {
-    fetch('http://localhost:3000/users/1', {
-      method: "GET",
-      headers: {
-        'Content-Type': 'application/json',
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NDUwNzQ4MzJ9.QZpCtc9tigJap5ZvnZaZPukr69jxotIzPuWYxjyIbR0"
-      }
-    }).then(resp => resp.json())
-    .then(json => this.setState({
-      user: {name: json.name, email: json.email, id: json.id}
-    }, () => console.log(this.state)))
-  }
+// // AS SOON AS USER LOGS IN WITH THEIR EMAIL AND PASSWORD, AN AUTH TOKEN IS RETURNED
+// // WE WILL SET THIS IN THE LOCAL STORAGE FOR ALL FUTURE REQUESTS
+//   componentDidMount = () => {
+//     fetch('http://localhost:3000/authenticate?email=rick@rick.com&password=rick', {
+//       method: "POST",
+//       headers:{
+//       'Content-Type': 'application/json',
+//   }
+// }).then(resp => resp.json()).then(json => this.setAuthToken(json)).then(() => this.getUserData())
+//   }
+//
+// // SETTING THE AUTH TOKEN IN LOCAL STORAGE
+//   setAuthToken = (json) => {
+//     localStorage.setItem('authToken', json.auth_token)
+//   }
+//
+// // EXAMPLE OF HOW TO USE THE AUTH TOKEN TO GET DATA.
+//   getUserData = () => {
+//     fetch('http://localhost:3000/users/1', {
+//       method: "GET",
+//       headers: {
+//         'Content-Type': 'application/json',
+//         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NDUwNzQ4MzJ9.QZpCtc9tigJap5ZvnZaZPukr69jxotIzPuWYxjyIbR0"
+//       }
+//     }).then(resp => resp.json())
+//     .then(json => this.setState({
+//       user: {name: json.name, email: json.email, id: json.id}
+//     }, () => console.log(this.state)))
+//   }
 
   render() {
     return (
