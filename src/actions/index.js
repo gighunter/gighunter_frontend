@@ -1,8 +1,9 @@
 
-export const requestLoginInformation = (userName, pass) => {
+export const requestLoginInformation = async (userName, pass) => {
+
   return {
     type: 'REQUEST_LOGIN_INFORMATION_SUCCESS',
-    payload: { userName, pass }
+    payload: mockData
   };
 };
 
