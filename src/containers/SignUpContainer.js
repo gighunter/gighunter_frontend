@@ -13,9 +13,14 @@ class SignUpContainer extends React.Component {
   render() {
     return (
       <div>
-        <p>
-          Sign Up Container
-        </p>
+        <form action="index.html" method="post">
+            <input type="txt" name="fname" placeholder="first name" required></input>
+            <input type="txt" name="lname" placeholder="last name" required></input>
+            <input type="email" name="email" placeholder="email" required></input>
+            <input type="password" name="pwd" placeholder="password" required></input>
+            <input type="txt" name="location" placeholder="location"></input>
+            <input type="submit"></input> 
+        </form>
       </div>
     );
   }
