@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { sendSignUpInformation } from '../actions/index';
+import { requestLoginInformation } from '../actions/index';
 
 class SignUpContainer extends React.Component {
 

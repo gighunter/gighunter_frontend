@@ -25,20 +25,26 @@ export default class App extends React.Component {
 
 // SETTING THE AUTH TOKEN IN LOCAL STORAGE
   setAuthToken = (json) => {
-    localStorage.setItem('authToken', json.auth_token)
+    localStorage.setItem('authToken', json.auth_token);
+    this.setState({
+      user: {
+        user_id: json.user_id
+      }
+    });
   }
 
 // EXAMPLE OF HOW TO USE THE AUTH TOKEN TO GET DATA.
   getUserData = () => {
-    fetch('http://localhost:3000/users/1', {
+    const jwt = localStorage.getItem('authToken');
+    fetch(`http://localhost:3000/users/${this.state.user.user_id}`, {
       method: "GET",
       headers: {
         'Content-Type': 'application/json',
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NDUwNzQ4MzJ9.QZpCtc9tigJap5ZvnZaZPukr69jxotIzPuWYxjyIbR0"
+        "Authorization": `Bearer ${jwt}`
       }
     }).then(resp => resp.json())
     .then(json => this.setState({
-      user: {name: json.name, email: json.email, id: json.id}
+      user: json
     }, () => console.log(this.state)))
   }
 
