@@ -5,6 +5,7 @@ import LoginContainer from '../containers/LoginContainer';
 import SignUpContainer from '../containers/SignUpContainer';
 import NotFound from './NotFound';
 import Home from './Home';
+import UsersPage from './UsersPage'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -12,26 +13,26 @@ export default class App extends React.Component {
     this.state = { hello: '', user: {} };
   }
 
-// AS SOON AS USER LOGS IN WITH THEIR EMAIL AND PASSWORD, AN AUTH TOKEN IS RETURNED
-// WE WILL SET THIS IN THE LOCAL STORAGE FOR ALL FUTURE REQUESTS
-  componentDidMount = () => {
-    fetch('http://localhost:3000/authenticate?email=rick@rick.com&password=rick', {
-      method: "POST",
-      headers:{
-      'Content-Type': 'application/json',
-  }
-}).then(resp => resp.json()).then(json => this.setAuthToken(json)).then(() => this.getUserData())
-  }
-
-// SETTING THE AUTH TOKEN IN LOCAL STORAGE
-  setAuthToken = (json) => {
-    localStorage.setItem('authToken', json.auth_token);
-    this.setState({
-      user: {
-        user_id: json.user_id
-      }
-    });
-  }
+// // AS SOON AS USER LOGS IN WITH THEIR EMAIL AND PASSWORD, AN AUTH TOKEN IS RETURNED
+// // WE WILL SET THIS IN THE LOCAL STORAGE FOR ALL FUTURE REQUESTS
+//   componentDidMount = () => {
+//     fetch('http://localhost:3000/authenticate?email=rick@rick.com&password=rick', {
+//       method: "POST",
+//       headers:{
+//       'Content-Type': 'application/json',
+//   }
+// }).then(resp => resp.json()).then(json => this.setAuthToken(json)).then(() => this.getUserData())
+//   }
+//
+// // SETTING THE AUTH TOKEN IN LOCAL STORAGE
+//   setAuthToken = (json) => {
+//     localStorage.setItem('authToken', json.auth_token);
+//     this.setState({
+//       user: {
+//         user_id: json.user_id
+//       }
+//     });
+//   }
 
 // EXAMPLE OF HOW TO USE THE AUTH TOKEN TO GET DATA.
   getUserData = () => {
@@ -58,6 +59,7 @@ export default class App extends React.Component {
               <Route exact component={Home} props={this.state} path="/" />
               <Route exact component={LoginContainer}  path="/login" />
               <Route exact component={SignUpContainer} path="/sign-up" />
+              <Route exact component={UsersPage} path="/users" />
               <Route       component={NotFound} />
             </Switch>
           </div>

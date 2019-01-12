@@ -10,7 +10,7 @@ const Header = () => (
     </div>
     <div className="header__right">
       <div>
-        <Link to="/route1">Product&nbsp;&#x25BC;</Link>
+        <Link to="/users">Users</Link>
       </div>
       <div>
         <Link to="/route2">Performers</Link>
