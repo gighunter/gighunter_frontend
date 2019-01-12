@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 const BASE_URL = 'http://localhost:3000/api/v1/'
 class UsersPage extends Component {
@@ -6,15 +7,15 @@ class UsersPage extends Component {
     users: []
   }
   componentDidMount = () => {
-    if(localStorage.getItem('authToken')){
-      this.getUserData()
-    } else{
-      console.log('u fagg')
+    const jwt = localStorage.getItem('authToken');
+    if(!jwt || jwt == "undefined"){
+      this.props.history.push('/login')
+    } else {
+      this.getUserData(jwt)
     }
   }
 
-  getUserData = () => {
-    const jwt = localStorage.getItem('authToken');
+  getUserData = (jwt) => {
     fetch(BASE_URL + 'users', {
       method: "GET",
       headers: {
@@ -29,11 +30,13 @@ class UsersPage extends Component {
   render(){
     return(
       <div>{this.state.users && this.state.users.map(user => (
+        <Link to={`users/${user.id}`}>
         <div>
           <img width="200px" src={user.img_url} alt='user_img'/>
           <p>{user.first_name} {user.last_name}</p>
           <p>{user.city}</p>
         </div>
+        </Link>
       ))}</div>
     )
   }

@@ -6,11 +6,12 @@ import SignUpContainer from '../containers/SignUpContainer';
 import NotFound from './NotFound';
 import Home from './Home';
 import UsersPage from './UsersPage'
+import UserPage from './UserPage'
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { hello: '', user: {} };
+    this.state = { user: {} };
   }
 
 // // AS SOON AS USER LOGS IN WITH THEIR EMAIL AND PASSWORD, AN AUTH TOKEN IS RETURNED
@@ -37,7 +38,7 @@ export default class App extends React.Component {
 // EXAMPLE OF HOW TO USE THE AUTH TOKEN TO GET DATA.
   getUserData = () => {
     const jwt = localStorage.getItem('authToken');
-    fetch(`http://localhost:3000/users/${this.state.user.user_id}`, {
+    fetch(`http://localhost:3000/api/v1/users/${this.state.user.user_id}`, {
       method: "GET",
       headers: {
         'Content-Type': 'application/json',
@@ -49,17 +50,22 @@ export default class App extends React.Component {
     }, () => console.log(this.state)))
   }
 
+  logOut = () => {
+    localStorage.clear()
+  };
+
   render() {
     return (
       <Router>
         <div>
-          <Header />
+          <Header logOut={this.logOut}/>
           <div className="page-body">
             <Switch>
               <Route exact component={Home} props={this.state} path="/" />
               <Route exact component={LoginContainer}  path="/login" />
               <Route exact component={SignUpContainer} path="/sign-up" />
               <Route exact component={UsersPage} path="/users" />
+              <Route exaxt component={UserPage} path="/users/:id"/>
               <Route       component={NotFound} />
             </Switch>
           </div>

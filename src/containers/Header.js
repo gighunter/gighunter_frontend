@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => (
+
+
+const Header = (props) => (
   <div className="header">
     <div className="header__left">
       <div className="logo--white">
@@ -16,13 +18,13 @@ const Header = () => (
         <Link to="/">Home</Link>
       </div>
       <div>
-        <Link to="/route3">Good Guys</Link>
-      </div>
-      <div>
         <Link to="/login">Login</Link>
       </div>
       <div>
         <Link to="/sign-up">Sign Up</Link>
+      </div>
+      <div>
+      <button onClick={props.logOut}>Log Out</button>
       </div>
     </div>
   </div>

@@ -23,12 +23,13 @@ class LoginContainer extends React.Component {
         headers:{
         'Content-Type': 'application/json',
     }
-  }).then(resp => resp.json()).then(json => this.setAuthToken(json)).then(() => this.getUserData())
+  }).then(resp => resp.json()).then(json => this.setAuthToken(json)).then(() => this.props.history.push("/"))
     }
 
   // SETTING THE AUTH TOKEN IN LOCAL STORAGE
     setAuthToken = (json) => {
       localStorage.setItem('authToken', json.auth_token);
+      localStorage.setItem('user_id', json.user_id);
       this.setState({
         user: {
           user_id: json.user_id
