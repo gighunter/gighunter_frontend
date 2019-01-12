@@ -8,6 +8,9 @@ class UserPage extends React.Component {
 
   componentDidMount = () => {
     const jwt = localStorage.getItem('authToken');
+    if(!jwt || jwt == "undefined"){
+      this.props.history.push('/login')
+    } 
     fetch(BASE_URL + `users/${this.props.match.params.id}`, {
       headers: {
         'Content-Type': 'application/json',

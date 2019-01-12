@@ -51,7 +51,7 @@ export default class App extends React.Component {
   }
 
   logOut = () => {
-    localStorage.clear()
+    localStorage.clear();
   };
 
   render() {

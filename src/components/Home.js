@@ -8,7 +8,7 @@ class Home extends React.Component {
 
   componentDidMount = () => {
     const jwt = localStorage.getItem('authToken');
-    if(!jwt){
+    if(!jwt || jwt === 'undefined' ){
       this.props.history.push('/login')
     }
     const userId = localStorage.getItem('user_id')
