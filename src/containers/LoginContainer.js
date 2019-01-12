@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { requestLoginInformation } from '../actions/index';
 
-const BASE_URL = "http://localhost:3000/api/v1/"
+const BASE_URL = "http://localhost:3000/"
 
 
 class LoginContainer extends React.Component {

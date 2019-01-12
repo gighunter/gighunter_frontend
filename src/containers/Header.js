@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 const Header = (props) => (
   <div className="header">
     <div className="header__left">
@@ -11,20 +9,20 @@ const Header = (props) => (
       </div>
     </div>
     <div className="header__right">
+    <div>
+    {localStorage.getItem('authToken') ? <Link to="/">Home</Link> : ""}
+    </div>
       <div>
-        <Link to="/users">Users</Link>
+        {localStorage.getItem('authToken') ? <Link to="/users">Users</Link> : ""}
       </div>
       <div>
-        <Link to="/">Home</Link>
+        {localStorage.getItem('authToken') == 'undefined' || !localStorage.getItem('authToken')? <Link to="/login">Login</Link> : ""}
       </div>
       <div>
-        <Link to="/login">Login</Link>
+        {localStorage.getItem('authToken') == 'undefined' || !localStorage.getItem('authToken')? <Link to="/sign-up">Sign Up</Link> : ""}
       </div>
       <div>
-        <Link to="/sign-up">Sign Up</Link>
-      </div>
-      <div>
-      <button onClick={props.logOut}>Log Out</button>
+      {localStorage.getItem('authToken') ? <Link to="/login" onClick={props.logOut}>Log Out</Link> : ""}
       </div>
     </div>
   </div>
