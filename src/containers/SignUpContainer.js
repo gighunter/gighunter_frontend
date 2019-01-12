@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { requestLoginInformation } from '../actions/index';
 
+const BASE_URL = "http://localhost:3000/api/v1/"
+
 class SignUpContainer extends React.Component {
+
 
   constructor(props) {
     super(props);
@@ -23,14 +26,21 @@ class SignUpContainer extends React.Component {
     }, () => console.log(this.state))
   }
 
-  handleFormSubmit = () => {
-    console.log("you are trying to submit")
+  handleFormSubmit = (e) => {
+    e.preventDefault()
+    fetch(BASE_URL + "users", {
+      method: 'POST',
+      body: JSON.stringify(this.state),
+      headers: {'Content-Type': 'application/json'}
+    })
+    .then(response => response.json())
+    .then(json => console.log(json))
   }
 
   render() {
     return (
       <div>
-        <form action="index.html" method="post">
+        <form>
             <input type="txt" name="first_name" placeholder="first name" onChange={this.handleFormInput} value={this.state.first_name} required></input>
             <input type="txt" name="last_name" placeholder="last name" onChange={this.handleFormInput} value={this.state.last_name} required></input>
             <input type="email" name="email" placeholder="email" onChange={this.handleFormInput} value={this.state.email} required></input>
