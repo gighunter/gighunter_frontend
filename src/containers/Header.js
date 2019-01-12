@@ -5,7 +5,7 @@ const Header = () => (
   <div className="header">
     <div className="header__left">
       <div className="logo--white">
-        <img src="/logo-white.png" alt="Gighunter" />
+        <Link to="/"><img src="/logo-white.png" alt="Gighunter" /></Link>
       </div>
     </div>
     <div className="header__right">
@@ -13,7 +13,7 @@ const Header = () => (
         <Link to="/users">Users</Link>
       </div>
       <div>
-        <Link to="/route2">Performers</Link>
+        <Link to="/">Home</Link>
       </div>
       <div>
         <Link to="/route3">Good Guys</Link>

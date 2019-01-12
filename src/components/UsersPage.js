@@ -31,8 +31,7 @@ class UsersPage extends Component {
       <div>{this.state.users && this.state.users.map(user => (
         <div>
           <img width="200px" src={user.img_url} alt='user_img'/>
-          <p>{user.first_name}</p>
-          <p>{user.last_name}</p>
+          <p>{user.first_name} {user.last_name}</p>
           <p>{user.city}</p>
         </div>
       ))}</div>
