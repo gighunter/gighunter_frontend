@@ -1,0 +1,12 @@
+@import "../abstracts/mixins";
+
+@mixin submit-button--small{
+  background: transparent;
+  padding: 10px 30px;
+  border-radius: 5px;
+
+  &:hover{
+    animation: fill-slow 6s ease-in;
+    animation-iteration-count: infinite;
+  }
+}

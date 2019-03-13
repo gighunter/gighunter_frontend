@@ -48,9 +48,9 @@ class LoginContainer extends React.Component {
     return (
       <div className="login">
         <form className="login--form">
-          <input type="email" name="email" placeholder="email" onChange={this.handleFormInput} value={this.state.email}/>
-          <input type="password" name="password" placeholder="password" onChange={this.handleFormInput} value={this.state.password}/>
-          <input type='submit' onClick={this.handleFormSubmit} />
+          <input type="email" name="email" placeholder="email" onChange={this.handleFormInput} value={this.state.email} />
+          <input type="password" name="password" placeholder="password" onChange={this.handleFormInput} value={this.state.password} />
+          <input type='submit' className="login--form__submit-button" onClick={this.handleFormSubmit} />
         </form>
       </div>
     );

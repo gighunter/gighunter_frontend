@@ -1,0 +1,70 @@
+/*****************************************
+              ANIMATIONS
+*****************************************/
+
+@keyframes fill-slow{
+  0%{
+    border-color: black $color--gighunter--primary--purple black $color--gighunter--primary--purple;
+    color: black;
+  }
+
+  50%{
+   border-color: $color--gighunter--primary--purple black $color--gighunter--primary--purple black;
+   color: $color--gighunter--primary--purple;
+  }
+
+  75%{
+    border-color: black $color--gighunter--primary--purple black $color--gighunter--primary--purple;
+    color: black;
+  }
+
+  100%{
+    border-color: black $color--gighunter--primary--purple black $color--gighunter--primary--purple;
+    color: black;
+  }
+}
+
+@-webkit-keyframes fill-slow{
+    0%{
+      border-color: black $color--gighunter--primary--purple black $color--gighunter--primary--purple;
+      color: black;
+    }
+
+    50%{
+     border-color: $color--gighunter--primary--purple black $color--gighunter--primary--purple black;
+     color: $color--gighunter--primary--purple;
+    }
+
+    75%{
+      border-color: black $color--gighunter--primary--purple black $color--gighunter--primary--purple;
+      color: black;
+    }
+
+    100%{
+      border-color: black $color--gighunter--primary--purple black $color--gighunter--primary--purple;
+      color: black;
+    }
+}
+
+
+@-moz-keyframes fill-slow{
+    0%{
+      border-color: black purple black purple;
+      color: black;
+    }
+
+    50%{
+     border-color: purple black purple black;
+     color: purple;
+    }
+
+    75%{
+      border-color: black purple black purple;
+      color: black;
+    }
+
+    100%{
+      border-color: black $color--gighunter--primary--purple black $color--gighunter--primary--purple;
+      color: black;
+    }
+}
