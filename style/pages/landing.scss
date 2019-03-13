@@ -1,0 +1,25 @@
+
+.page-body{
+
+   overflow-y:scroll;
+   height: 100%;
+   width: 100%;
+
+  .login{
+    display: flex;
+    height: 40vh;
+    width: 100%;
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+
+    &--form{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      justify-content: space-evenly;
+      height: 100%;
+    }
+  }
+}

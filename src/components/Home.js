@@ -1,6 +1,7 @@
 import React from 'react';
 
-const BASE_URL = 'http://localhost:3000/api/v1/'
+const BASE_URL = 'http://localhost:3000/api/v1/';
+
 class Home extends React.Component {
   state = {
     user: {}
