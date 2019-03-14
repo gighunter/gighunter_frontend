@@ -57,7 +57,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="app">
           <Header logOut={this.logOut}/>
           <div className="page-body">
             <Switch>
@@ -65,7 +65,7 @@ export default class App extends React.Component {
               <Route exact component={LoginContainer}  path="/login" />
               <Route exact component={SignUpContainer} path="/sign-up" />
               <Route exact component={UsersPage} path="/users" />
-              <Route exaxt component={UserPage} path="/users/:id"/>
+              <Route exact component={UserPage} path="/users/:id"/>
               <Route       component={NotFound} />
             </Switch>
           </div>
