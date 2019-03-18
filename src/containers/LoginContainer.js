@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { requestLoginInformation } from '../actions/index';
+import image from '../../style/abstracts/images/milky.jpg'
 
 const BASE_URL = "http://localhost:3000/"
 
@@ -46,7 +47,7 @@ class LoginContainer extends React.Component {
 
   render() {
     return (
-      <div className="login">
+      <div className="login" style={{ background: `url(${image})`}}>
         <form className="login--form">
           <input type="email" name="email" placeholder="email" onChange={this.handleFormInput} value={this.state.email} />
           <input type="password" name="password" placeholder="password" onChange={this.handleFormInput} value={this.state.password} />

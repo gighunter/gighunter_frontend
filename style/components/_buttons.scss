@@ -1,9 +1,11 @@
 @import "../abstracts/mixins";
+@import "../abstracts/fonts";
 
 @mixin submit-button--small{
   background: transparent;
   padding: 10px 30px;
   border-radius: 5px;
+  font-family: gighunter--header--font;
 
   &:hover{
     animation: fill-slow 6s ease-in;
