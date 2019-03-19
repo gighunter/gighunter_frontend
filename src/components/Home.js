@@ -28,7 +28,7 @@ class Home extends React.Component {
     return (
       <div className="landing_container">
         <img width="300px" src={this.state.user.img_url} alt="user_img"/>
-        <p>{this.state.user.first_name} {this.state.user.last_name}</p>
+        <p> Hello {this.state.user.first_name} {this.state.user.last_name}</p>
       </div>
     );
   }
