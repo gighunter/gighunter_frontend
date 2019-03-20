@@ -1,10 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Card } from 'react-bootstrap';
 
-const BASE_URL = 'http://localhost:3000/api/v1/'
+const BASE_URL = 'http://localhost:3000/api/v1/';
+
 class Home extends React.Component {
   state = {
     user: {}
   }
+
+  handleExpandClick = () => {
+    this.setState(state => ({ expanded: !state.expanded }));
+  };
 
   componentDidMount = () => {
     const jwt = localStorage.getItem('authToken');
@@ -24,14 +31,29 @@ class Home extends React.Component {
       user: json
     }))
   }
-  render(){
+
+  render() {
     return (
       <div className="landing_container">
-        <img width="300px" src={this.state.user.img_url} alt="user_img"/>
-        <p> Hello {this.state.user.first_name} {this.state.user.last_name}</p>
+        <div className="landing-container__profile-picture">
+          <Card style={{ maxWidth: '400px', maxHeight: '400px', margin: ' 50px 75px' }}>
+            <Card.Img
+              variant="top"
+              style={{ maxWidth: '400px', maxHeight: '400px' }}
+              src={this.state.user.img_url}
+            />
+            <Card.Body>
+              <Card.Title style={{ textAlign: 'center', fontSize: '2.50rem', padding: '5px' }}>
+                { this.state.user.first_name }
+                {' '}
+                { this.state.user.last_name }
+              </Card.Title>
+            </Card.Body>
+          </Card>
+        </div>
       </div>
-    );
+    )
   }
-};
+}
 
 export default Home;

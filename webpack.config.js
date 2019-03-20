@@ -46,7 +46,7 @@ module.exports = {
         poll: 1000
       },
        stats: {
-         colors: true,
+        colors: true,
         hash: false,
         version: false,
         timings: false,
