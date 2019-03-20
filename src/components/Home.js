@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card } from 'react-bootstrap';
+import util from '../utils/custom_loggers';
 
 const BASE_URL = 'http://localhost:3000/api/v1/';
 
@@ -33,6 +34,7 @@ class Home extends React.Component {
   }
 
   render() {
+    util.table(this.state);
     return (
       <div className="landing_container">
         <div className="landing-container__profile-picture">
@@ -48,6 +50,11 @@ class Home extends React.Component {
                 {' '}
                 { this.state.user.last_name }
               </Card.Title>
+              <Card.Text>
+                { this.state.user.bio }
+                {' '}
+                {this.state.user.city }
+              </Card.Text>
             </Card.Body>
           </Card>
         </div>

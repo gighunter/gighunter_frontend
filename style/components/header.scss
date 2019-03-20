@@ -17,8 +17,11 @@ $header-height: 108px;
     margin: 3% auto auto 1%;
     display: inline-block;
     float: left;
-
+   .logo--white{
+     transform: translateY(-10px);
+   }
   }
+
   .header__right {
     float: right;
     margin: 3% 2% auto auto;
