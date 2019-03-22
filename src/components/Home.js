@@ -34,29 +34,24 @@ class Home extends React.Component {
   }
 
   render() {
-    util.table(this.state);
     return (
       <div className="landing_container">
-        <div className="landing-container__profile-picture">
-          <Card style={{ maxWidth: '400px', maxHeight: '400px', margin: ' 50px 75px' }}>
-            <Card.Img
-              variant="top"
-              style={{ maxWidth: '400px', maxHeight: '400px' }}
-              src={this.state.user.img_url}
-            />
-            <Card.Body>
-              <Card.Title style={{ textAlign: 'center', fontSize: '2.50rem', padding: '5px' }}>
+        <div className="landing_container__profile-picture">
+          <div className="card">
+            <img src={this.state.user.img_url} />
+            <div className="card-information">
+              <div>
                 { this.state.user.first_name }
                 {' '}
                 { this.state.user.last_name }
-              </Card.Title>
-              <Card.Text>
+              </div>
+              <div>
                 { this.state.user.bio }
                 {' '}
-                {this.state.user.city }
-              </Card.Text>
-            </Card.Body>
-          </Card>
+                { this.state.user.city }
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )

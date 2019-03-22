@@ -1,0 +1,10 @@
+@import 'components/card';
+
+$size:'medium';
+.landing_container{
+  &__profile-picture{
+   .card{
+     @include card($size);
+   }
+  }
+}

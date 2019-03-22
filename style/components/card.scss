@@ -1,0 +1,44 @@
+
+$size:'medium';
+@mixin card($size){
+  @if $size == 'medium'{
+     max-width: 400px;
+     max-height: 400px;
+     margin: 50px 75px;
+     img{
+       max-width: 400px;
+       max-height: 400px;
+     }
+     &--card-information{
+       text-align: 'center';
+       font-size: 2.50rem;
+       padding: 5px;
+     }
+ } @else if $size == 'small'{
+     max-width: 200px;
+     max-height: 200px;
+     margin: 25px 50px;
+     img{
+       max-width: 200px;
+       max-height: 200px;
+     }
+     &--card-information{
+       text-align: 'center';
+       font-size: 2.50rem;
+       padding: 2.5px;
+     }
+ } @else if $size == 'large'{
+     max-width: 800px;
+     max-height: 800px;
+     margin: 50px 75px;
+     img{
+       max-width: 800px;
+       max-height: 800px;
+     }
+     &--card-information{
+       text-align: 'center';
+       font-size: 2.50rem;
+       padding: 5px;
+     }
+    }
+  }
